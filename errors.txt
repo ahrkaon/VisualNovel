@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/status_screens.rpy", line 42: u'color' is not a keyword argument or valid child for the textbutton statement.
+    textbutton "마키" align (.3, .3) color "#FFFFFF" action [Hide("StatsUI"), ShowMenu("Stats_M")]
+                                        ^
+
+Ren'Py Version: Ren'Py 7.4.9.2142
+Wed Nov  3 13:52:55 2021

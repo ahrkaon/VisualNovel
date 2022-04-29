@@ -1,0 +1,39 @@
+####인벤토리 ###########
+init python:
+    class Item:
+        def __init__(self, name, value, use):
+            self.img = img
+            self.value = value
+            self.use = False
+        def use(self):
+            self.use = True
+init:
+    $ view_items = []
+    $ use_items = []
+    #$ view_items.append("몽둥이")
+    #$ view_items.append("가위")
+screen sc_item_list():
+    frame:
+        xpadding 50
+        ypadding 50
+        xalign 0.5 yalign 0.5
+        vbox:
+            spacing 20
+            for i in view_items:
+                textbutton "[i]" action Return(i)        
+                
+            textbutton "돌아가기" action Return()
+    
+init python:
+    def inventory_button():
+        #if show_inventory:
+            ui.vbox(spacing=100, xalign = 0.0, yalign = 0.0)
+            ui.imagebutton("heart_idle.png", clicked=renpy.curried_call_in_new_context("show_item_list"))
+            ui.close()
+    config.overlay_functions.append(inventory_button)
+
+label show_item_list:
+    $renpy.call_screen("sc_item_list")
+    return
+
+#########인벤토리 끝 ###########
