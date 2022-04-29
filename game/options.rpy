@@ -188,7 +188,7 @@ define config.has_voice = True
 ## 처리를 제거하십시오. 이 파일은 중지되거나 다른 파일이 재생 될 때까지 계속 재
 ## 생합니다.
 
-define config.main_menu_music = "vampires_piano.mp3"
+define config.main_menu_music = "audio/vampires_piano.mp3"
 
 
 ## 번역 ##########################################################################
@@ -245,7 +245,7 @@ define config.window_hide_transition = Dissolve(.2)
 ## 기본 글자 속도를 제어합니다. 기본적으로, 0은 즉시이며 다른 숫자는 초당 입력
 ## 할 문자 수입니다.
 
-default preferences.text_cps = 20
+default preferences.text_cps = 30
 
 
 ## 기본 auto-forward 지연 시간입니다. 숫자가 클수록 대기 시간이 길어지며, 0 ~ 30

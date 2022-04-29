@@ -36,7 +36,7 @@ label start:
         player.hp = 10
         player.starve = 50  
 
-    play music "Alexander Ehlers - Waking the devil.mp3" fadein 1.0 loop
+    play music "audio/Alexander Ehlers - Waking the devil.mp3" fadein 1.0 loop
      
     "유카리가 게임을 하다 지쳐 잠들었다 깨어나자 세계가 망해있었다."
     scene bg intro with dissolve
@@ -107,12 +107,12 @@ label 골목 :
         e "아니 그 소리는 정말 들었다니까요?" 
         e "뭔가 거대한 터널에서 날 법한 소리였어요." 
         e "그 때 사슴이 지나가긴 했지만 \n사슴이 그런 소리를 낼리 없잖아요."
-        play sound "Beast-Growl-2.ogg"
+        play sound "audio/Beast-Growl-2.ogg" fadein 0.5
         
         show uzayuka scared at right with dissolve
-        pause 1.0
+        pause 2.0
         e "히익! 들었어요?! 방금 그 소리였어요. 이젠 거짓말이라고 못하겠죠?"
-        stop sound
+        stop sound fadeout 2.0
         show uzayuka bubu at right with dissolve
         show maki hun at left with dissolve
         m "아무 소리도 안들렸는데? 너 정말 괜찮은거야? 아니면 아직도 배가 고파서 환청을 듣는건가?"
@@ -133,11 +133,11 @@ label M_route2:
     
     e "분명 이 근처에 상가가 있을텐데...
     아 저기있다..."
-    play sound "Beast-Growl-2.ogg" fadeout 1.0
+    play sound "audio/Beast-Growl-2.ogg" fadein 1.0
     pause 0.5
     show uzayuka scared with dissolve
     e "히익 뭐야...?"
-    stop sound
+    stop sound fadeout 1.0
     e "빨리 먹을 걸 찾아서 돌아가자"
     hide uzayuka scared
     
@@ -151,7 +151,7 @@ label M_route2:
 label 상가:
     
     scene bg map8 with fade
-    play music "forest.ogg" fadein 1.0
+    play music "audio/forest.ogg" fadein 1.0
     show uzayuka with dissolve
     e "아 여기 통조림이 있어"
     menu eat:
@@ -210,16 +210,16 @@ label M_route3:
 
     show uzayuka bubu with fade
     e "으음 역시 벌써 다 털린건가... 이러면 다른 곳도 마찬가질텐데..."
-    play sound "doorClose_3.ogg"
+    play sound "audio/doorClose_3.ogg"
 
     pause 0.7
 
     show uzayuka scared with dissolve
     e "꺄아악! 뭐냐고 정말! 왜 자꾸 아무도 없는데서 소리가 나는거야!"
     e "이...일단 여기서 나가야겠어.. 아직 입구로 들어왔을 뿐이니까 바로 돌아갈 수 있어"
-    play sound ["footstep04.ogg", "footstep04.ogg", "footstep04.ogg"]
+    play sound ["audio/footstep04.ogg", "audio/footstep04.ogg", "audio/footstep04.ogg"]
     pause 0.8
-    play sound "DoorPunch.ogg"
+    play sound "audio/DoorPunch.ogg"
     "우당탕" with vpunch
     hide uzayuka scared
     e "아얏"
@@ -361,18 +361,18 @@ label M_route6:
     e "쥐, 쥐는 없는거죠?" 
     e "바선생이랑 동급으로 끔찍한 생물인데요..."
     m "에휴 그런거 없으니까 제대로 찾아봐. \n이렇게 부서져서는 찾는게 오히려 기적이지만..."
-    play sound "creak2.ogg"
+    play sound "audio/creak2.ogg"
     pause 0.5
 
     e "어라? 밑에 뭐가 있나?"
-    play sound "creak2.ogg"
+    play sound "audio/creak2.ogg"
     pause 0.5
     e "마키씨, 여기 밑에 뭐가 있는 것 같아요." 
     e "뭔가 삐그덕 거리는 소리가 나요."
     m "그래? 잠깐만 비켜볼래?" 
     m "내가 한 번 뜯어볼게"
 
-    play sound ["DoorPunch.ogg", "DoorPunch.ogg", "impactwood07.ogg"]
+    play sound ["audio/DoorPunch.ogg", "audio/DoorPunch.ogg", "audio/impactwood07.ogg"]
     pause 2.0
     e "오오 이런 곳에 지하실이라니 뭔가 보물의 냄새가 풀풀 나요."
     e "그것보다... {size=-10}엄청난 괴력...그 힘의 원천은 역시 저 풍만한 가...{/size}"
@@ -390,7 +390,7 @@ label M_route6:
     jump M_route7
 label M_route7:
     scene bg basement with fade
-    play music "jkjkke - dream.mp3" fadein 3
+    play music "audio/jkjkke - dream.mp3" fadein 3
     show maki at left with dissolve
     show uzayuka at right with dissolve
 

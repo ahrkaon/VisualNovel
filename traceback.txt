@@ -1,69 +1,42 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 76, in script
-    e "으으 어딜가야 먹을걸 찾을 수 있지...?"
-  File "game/screens.rpy", line 1299, in execute
-    screen state:
-  File "game/screens.rpy", line 1299, in execute
-    screen state:
-  File "game/screens.rpy", line 1300, in execute
-    frame:
-AttributeError: 'Player' object has no attribute 'money'
+Exception: Backslash in filename, use '/' instead: u'audio\\vampires_piano.mp3'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 76, in script
-    e "으으 어딜가야 먹을걸 찾을 수 있지...?"
-  File "renpy/ast.py", line 721, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "renpy/exports.py", line 1417, in say
-    who(what, *args, **kwargs)
-  File "renpy/character.py", line 1235, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "renpy/character.py", line 887, in do_display
-    **display_args)
-  File "renpy/character.py", line 633, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
+    python hide:
+  File "renpy/ast.py", line 928, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "renpy/python.py", line 2245, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in <module>
+    python hide:
+  File "renpy/common/_layout/screen_main_menu.rpym", line 35, in _execute_python_hide
+    ui.interact()
   File "renpy/ui.py", line 298, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "renpy/display/core.py", line 3315, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
-  File "renpy/display/core.py", line 3735, in interact_core
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "renpy/display/core.py", line 568, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/core.py", line 568, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/core.py", line 568, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/screen.py", line 436, in visit_all
-    callback(self)
-  File "renpy/display/core.py", line 3735, in <lambda>
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "renpy/display/screen.py", line 447, in per_interact
-    self.update()
-  File "renpy/display/screen.py", line 637, in update
-    self.screen.function(**self.scope)
-  File "game/screens.rpy", line 1299, in execute
-    screen state:
-  File "game/screens.rpy", line 1299, in execute
-    screen state:
-  File "game/screens.rpy", line 1300, in execute
-    frame:
-  File "renpy/text/text.py", line 1669, in _scope
-    return self.set_text(self.text_parameter, scope, self.substitute, update)
-  File "renpy/text/text.py", line 1693, in set_text
-    i, did_sub = renpy.substitutions.substitute(i, scope, substitute)
-  File "renpy/substitutions.py", line 270, in substitute
-    s = formatter.vformat(s, (), kwargs)
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/string.py", line 563, in vformat
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/string.py", line 585, in _vformat
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/string.py", line 652, in get_field
-AttributeError: 'Player' object has no attribute 'money'
+  File "renpy/display/core.py", line 4020, in interact_core
+    renpy.audio.audio.periodic()
+  File "renpy/audio/audio.py", line 1162, in periodic
+    raise_(exc[0], exc[1], exc[2])
+  File "renpy/audio/audio.py", line 1140, in periodic_thread_main
+    periodic_pass()
+  File "renpy/audio/audio.py", line 1082, in periodic_pass
+    c.periodic()
+  File "renpy/audio/audio.py", line 518, in periodic
+    topf = load(filename)
+  File "renpy/audio/audio.py", line 69, in load
+    rv = renpy.loader.load(fn)
+  File "renpy/loader.py", line 789, in load
+    raise Exception("Backslash in filename, use '/' instead: %r" % name)
+Exception: Backslash in filename, use '/' instead: u'audio\\vampires_piano.mp3'
 
 Windows-10-10.0.19041
 Ren'Py 7.4.9.2142
 유카리여행기 0.1
-Wed Nov  3 13:44:21 2021
+Fri Apr 29 11:48:57 2022
